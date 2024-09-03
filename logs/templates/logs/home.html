@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+ Home 
+{% endblock %}
+
+{% block content %}
+<div class = "text-center">
+    <img src="{% static 'images/learning_log_list.png' %}" class = 'img-fluid' alt="">
+</div>
+
+<div class = "text-center">
+    <h3><a href="{% url 'logs_views'%}">Topics</a></h3>
+    
+</div>
+  
+{% endblock %}}

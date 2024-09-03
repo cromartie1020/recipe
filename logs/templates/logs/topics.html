@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}
+ Topics
+{% endblock %}
+
+{% block content %}
+  <h1>List of Topics</h1>
+  {% for topic in topics %}
+  <a href="{% url 'topic_detail' topic.id %}">
+    <li>{{topic}}</li>
+  </a>
+  {% empty %}
+   No topics listed at this time.
+  {% endfor %}
+
+{% endblock %}

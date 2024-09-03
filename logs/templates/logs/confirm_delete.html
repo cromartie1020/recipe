@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+   Confirm Delete
+
+{% endblock %}
+Topic is {{ topic }}.
+{% block content %}
+  <h1>
+    Confirm Delete
+  </h1>
+  <p>{{ entry }}</p>
+  <a href="{% url 'logs_views' %}">
+    <button type ='submit' class = 'btn btn-success btn-large'>Cancel</button>
+  </a>
+  <a href="{% url 'delete_entry' entry.id %}">
+    <button type = 'submit' class = 'btn btn-danger btn-large'>Delete</button>
+  </a>
+{% endblock %}
+ 

@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% block title %}
+  Entries
+{% endblock %}
+<br/>
+{% block content %}
+  <h2> Topic is {{ topic }}.</h2>
+  <hr/>  
+  {% for entry in entries %}
+    
+    Date added - {{ topic.date_added }}
+    <br />
+    {{  entry }}
+    <br />
+    <a href="">
+      <a href = "{% url 'edit_entry' entry.id %}">
+        <button type = 'button' class = 'btn btn-primary btn-lg' >Edit</button>
+      </a>
+    </a>
+    <a href="{% url 'confirm_delete' entry.id %}"> 
+      <button type = 'button' class = 'btn btn-danger btn-lg' >Delete</button>
+    </a>
+    <a href="{% url 'new_entry'  %}"> 
+      <button type = 'button' class = 'btn btn-success btn-lg' >New Entry</button>
+    </a>
+    
+    <br />
+    <br />
+  {% empty %}
+    No entries listed at this time.
+    <a href="{% url 'new_entry'  %}"> 
+      <button type = 'button' class = 'btn btn-success btn-lg' >New Entry</button>
+    </a>
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+   Date Added {{ topic.date_added }}
+   <br>
+   <a href="{% url 'list_entries' topic.id %}">{{ topic.text }}</a>
+   <br>
+   {% for entry in entries %}
+     <br>
+     <ul>
+        <li>
+         <h3>
+           <h2>Date Added</h2><h3>{{ entry.date_added }}</h3>
+           <br/>
+           <h4>{{ entry }}</h4> 
+           
+           <a href="{% url 'edit_entry' entry.id %}">
+             <button type = 'submit' class = "btn btn-success btn-large" >Edit</button>
+
+           </a>
+           <a href="{% url 'new_entry'  %}"> 
+            <button type = 'button' class = 'btn btn-success btn-large' >New Entry</button>
+          </a>
+           <button type = 'submit' class = "btn btn-danger btn-large" >Danger</button>
+           
+         </h3>
+        </li>
+     </ul>
+   {% empty %}
+   <a href="{% url 'new_entry'  %}"> 
+      <button type = 'button' class = 'btn btn-success btn-lg' >New Entry</button>
+    </a>
+     No entries enter at this time.  
+   {% endfor %}  
+       
+{% endblock %}

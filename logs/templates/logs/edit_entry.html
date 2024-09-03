@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+   Edit Entry
+{% endblock %}
+Topic is {{ topic }}.
+{% block content %}
+  <form action="" method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "submit" value = "Edit Entry." />
+  </form>
+{% endblock %}
+ 
