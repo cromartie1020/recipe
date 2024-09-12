@@ -8,10 +8,21 @@
   <h1>List of Topics</h1>
   {% for topic in topics %}
   <a href="{% url 'topic_detail' topic.id %}">
-    <li>{{topic}}</li>
+    <li>{{topic}} <a href="">Delete</a></li>
+    
   </a>
+  
   {% empty %}
    No topics listed at this time.
+   <a href="{% url 'new_topic' %}">
+    <li>{{topic}}</li>
+    <a href="">Delete</a>
+   </a>
   {% endfor %}
+  <br />
+  <a href="{% url 'new_topic' %}">Enter new Topic.</a>
+  
+    
+  
 
 {% endblock %}

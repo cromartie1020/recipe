@@ -84,9 +84,10 @@ def edit_entry(request, entry_id):
         
 
     else:
-        
+                
         form = EntryForm(instance = entry)
-
+        print(form)
+        
     context = { 
         'topic':topic,
         'form':form,

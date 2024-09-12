@@ -14,14 +14,13 @@ class Ingredient(models.Model):
     )
     This is the ingredients list.
     '''
-    name = models.CharField(max_length = 255) #Name of the ingredient.
+    name = models.CharField(max_length = 255, null = True, default = False) #Name of the ingredient.
 
     
 
     class Meta:
         
-        order_by = ('-name')
-        verbose_plural_name = 'ingredients' 
+        ordering = ['-name']
         
 
 
@@ -49,7 +48,7 @@ class Recipe(models.Model):
     
 
     class Meta:
-        order_by = ('-name')
+        ordering = ['-name']
         verbose_name_plural = 'recipies'
     
     def __str__(self):
